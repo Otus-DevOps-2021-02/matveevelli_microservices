@@ -1,5 +1,19 @@
 # matveevelli_microservices
 
+###Домашняя работа №18
+
+- Поднят докер с `prometheus` в яндекс.облаке
+- Посмотрел базовые метрики prometheus через UI
+- Посмотрел интерфейс с `targets`
+- Посмотрел как выглядит вывод экспортера `/metrics`
+- Создал докер образ prometheus с конфигом
+- Изменил докер-композ `reddit` и добавил ендпоинты в `prometheus`
+- Добавил `node-exporter` в композ, проверил что метрики видно
+- Добавил в композ и prometheus.yml мониторинг `mongoDB` с помощью экспортера `image: bitnami/mongodb-exporter:0.20.6`
+- Добавил blackbox-exporter для мониторинга comment, ui, post
+- Создал Makefile
+- Запушил в докерхаб образы `matveevelli/ui`, `matveevelli/comment`, `matveevelli/post`, `matveevelli/prometheus`
+
 ###Домашняя работа №16
 
 - Создана ВМ в yc с docker-host
