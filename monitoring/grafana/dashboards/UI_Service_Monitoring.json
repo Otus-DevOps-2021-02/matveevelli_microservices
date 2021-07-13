@@ -294,8 +294,8 @@
       "list": []
     },
     "time": {
-      "from": "2021-07-13T04:04:28.162Z",
-      "to": "2021-07-13T04:06:50.795Z"
+      "from": "now-6h",
+      "to": "now"
     },
     "timepicker": {
       "refresh_intervals": [
