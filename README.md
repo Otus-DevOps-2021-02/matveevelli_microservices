@@ -1,5 +1,22 @@
 # matveevelli_microservices
 
+###Домашняя работа №19
+
+- Разделил файл docker-compose на reddit и monitoring, появился новый, `docker-compose-monitoring.yml`
+- Поднята инфраструктура с cAdvisor, добавлены цели `cAdvisor` и `post` в prometheus
+- Добавлена графана в компоуз, поднята
+- Импортирован дашборд, создан новый
+- В новый кастомный дашборд добавлены метрики, добавлена функция rate() для первого графика `rate(ui_request_count{http_status=~"^[23].*"}[1m])`
+- Создан график с 95 процентилем HTTP запросов
+- Экспортирован дашборд в папку `grafana/dashboards`
+- Создан дашборд бизнес-метрик, добавлены графики, экспортирован в папку к остальным
+- Создан докерфайл alertmanager'a, добавлен конфиг webhook'a, в prometheus добавил алертменеджер с конфигфайлом
+- Остановлен контейнер `post` - алерт получен в слак
+- Запушил в докерхаб образы `matveevelli/ui`, `matveevelli/comment`, `matveevelli/post`, `matveevelli/prometheus`, `matveevelli/alertmanager`
+- Дополнен Makefile
+- Запущены метрики докер-демона (которые в экспериментальном режиме)
+
+
 ###Домашняя работа №18
 
 - Поднят докер с `prometheus` в яндекс.облаке
