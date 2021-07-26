@@ -1,0 +1,9 @@
+[masters]
+master ansible_host=84.252.130.189 ansible_user=ubuntu new_hostname=master
+
+[workers]
+worker1 ansible_host=84.252.131.146 ansible_user=ubuntu new_hostname=worker1
+worker2 ansible_host=130.193.51.248 ansible_user=ubuntu new_hostname=worker2
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
