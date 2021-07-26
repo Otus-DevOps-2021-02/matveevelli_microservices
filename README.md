@@ -2,7 +2,7 @@
 
 ##Домашняя работа №21
 
-- Создал терраформом три ноды мастер и два воркера
+- Создал терраформом три ноды: мастер и два воркера
 - Установил на них `docker, kubeadm, kubectl, kubelet`
 - Инициализировал на мастере кластер `kubeadm init --pod-network-cidr=10.244.0.0/16`, создал токен `kubeadm token create --print-join-command`
 - Создал директорию `$HOME/.kube/` скопировал в нее `/etc/kubernetes/admin.config`
