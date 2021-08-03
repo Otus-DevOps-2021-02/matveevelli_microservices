@@ -1,5 +1,17 @@
 # matveevelli_microservices
 
+##Домашняя работа №23
+- Выключили включили kube-dns
+- Сделали LoadBalancer для ui
+- Добавили Ingress для ui и удалили LB
+- Добавили секретов для Ingress сгенерировав сертификаты
+- Настроили в Ingress прием HTTPS трафика, проверил перейдя по https://
+- Поиграли с NetworkPolicy, к сожалению в презентации команды с gce. Отключили доступ для post-сервиса, добавил в ямл селектор для него, доступ появился
+- Создал PersistentVolume для mongo, в команде в презентации не хватает указания --zone
+- Смонтировал диск к mongo, удалил создал деплоймент
+- Описал создание секрета в `ui-ingress.yml`
+
+
 ##Домашняя работа №22
 
 - Создал кластер minikube
@@ -7,6 +19,11 @@
 - Создан кластер kubernetes в yc
 - Поднят reddit в нем
 - Поднят балансировщик для доступа по `external_ip`
+- Создана конфигурация `/kubernetes/reddit/terraform/` для поднятия managed-кластера и 2 нод
+- Создан манифест `/kubernetes/reddit/dashboard/` для включения dashboard,
+командой `kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep otus-admin | awk '{print $1}')` получаем токен для сервис аккаунта `otus-admin`
+командой `kubectl proxy` включаем прокси :D
+дальше переходим по адресу `http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/`, в токен вставляем наш скопированный
 
 ##Домашняя работа №21
 
