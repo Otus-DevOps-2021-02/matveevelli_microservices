@@ -66,7 +66,7 @@ resource "yandex_kubernetes_node_group" "my_node_group" {
     }
 
     resources {
-      memory = 8
+      memory = 12
       cores  = 4
     }
 

@@ -1,0 +1,23 @@
+comment:
+  image:
+    repository: matveevelli/comment
+    tag: latest
+  service:
+    externalPort: 9292
+
+post:
+  image:
+    repository: matveevelli/post
+    tag: 3
+  service:
+    externalPort: 5000
+
+ui:
+  image:
+    repository: matveevelli/ui
+    tag: latest
+  service:
+    externalPort: 9292
+
+mongodb:
+    usePassword: false
