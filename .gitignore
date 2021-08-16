@@ -10,3 +10,5 @@ vault.key
 docker-1.log
 *.swp
 .env
+tls.crt
+tls.key
