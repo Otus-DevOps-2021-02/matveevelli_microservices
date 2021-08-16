@@ -1,5 +1,19 @@
 # matveevelli_microservices
 
+##Домашняя работа №21
+
+- Создал терраформом три ноды: мастер и два воркера
+- Установил на них `docker, kubeadm, kubectl, kubelet`
+- Инициализировал на мастере кластер `kubeadm init --pod-network-cidr=10.244.0.0/16`, создал токен `kubeadm token create --print-join-command`
+- Создал директорию `$HOME/.kube/` скопировал в нее `/etc/kubernetes/admin.config` как `$HOME/.kube/config`
+- `kubectl get nodes` выдал мастерноду
+- Команду из `kubeadm token create --print-join-command` проделал на воркерах, кластер создался
+- Установил `calico` на мастер `curl https://docs.projectcalico.org/manifests/calico.yaml -O`
+- Отредактировал манифест, изменил в нем `CALICO_IPV4POOL_CIDR` на `value: "10.244.0.0/16"`
+- Применил манифест на мастере `kubectl apply -f calico.yaml` -- все ноды стали Ready
+- Добавил в репозиторий папки `/kubernetes/terraform` `/kubernetes/ansible`
+
+
 ##Домашняя работа №20
 
 - Создал инфру с докер машиной и новыми образами с тегом `logging`
